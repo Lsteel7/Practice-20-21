@@ -1,0 +1,73 @@
+﻿<Window x:Class="Practice_20_21.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Practice_20_21"
+        mc:Ignorable="d"
+        Title="Поиск N-значных чисел с суммой цифр K" Height="400" Width="400">
+    <Grid>
+        <TabControl>
+            <TabItem x:Name="zadacha1" Header="Задание 1" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <StackPanel Margin="20">
+            <Label Content="Количество цифр (N):"/>
+            <TextBox x:Name="NDigitTextBox"/>
+            <Label Content="Сумма цифр (K):"/>
+            <TextBox x:Name="KSumTextBox"/>
+            <Button Content="Найти числа" Click="FindNumbersButton_Click"/>
+            <Label Content="Результат:"/>
+            <ScrollViewer Height="200">
+                <TextBlock x:Name="ResultTextBlock"/>
+            </ScrollViewer>
+        </StackPanel>
+    </Grid>
+    </TabItem>
+    <TabItem x:Name="zadacha2" Header="Задание 2" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <Grid Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="111*"/>
+                <ColumnDefinition Width="683*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Введите последовательность чисел (через пробел):" HorizontalAlignment="Left" Margin="20,20,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="InputTextBox" HorizontalAlignment="Left" Margin="20,50,0,0" VerticalAlignment="Top" Width="313" Height="50" Grid.ColumnSpan="2"/>
+            <Button Content="Заменить нули" HorizontalAlignment="Left" Margin="20,308,0,0" VerticalAlignment="Top" Click="ReplaceZeros_Click" Height="76" Width="170" Grid.ColumnSpan="2"/>
+            <Label Content="Измененная последовательность:" HorizontalAlignment="Left" Margin="20,226,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="OutputTextBox" HorizontalAlignment="Left" IsReadOnly="True" Margin="20,257,0,0" VerticalAlignment="Top" Width="313" Height="33" Grid.ColumnSpan="2"/>
+            <Label Content="Количество замен:" HorizontalAlignment="Left" Margin="272,226,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+            <TextBox x:Name="CountTextBox" HorizontalAlignment="Left" IsReadOnly="True" Margin="280,257,0,0" VerticalAlignment="Top" Width="105" Height="33" Grid.Column="1"/>
+        </Grid>
+    </TabItem>
+            <TabItem x:Name="zadacha3" Header="Задание 3" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Content="Задание 1: Студенты без троек" Grid.Row="0"/>
+                    <Label Content="Файл с данными студентов:" Grid.Row="1"/>
+                    <TextBox x:Name="InputFilePathTextBox" Margin="0,0,0,5" Grid.Row="2"/>
+                    <Button Content="Выбрать файл" Click="SelectInputFileButton_Click" Margin="0,0,0,10" Grid.Row="3"/>
+
+                    <Label Content="Файл для результатов:" Grid.Row="4"/>
+                    <TextBox x:Name="OutputFile1PathTextBox" Margin="0,0,0,5" Grid.Row="5"/>
+                    <Button Content="Выбрать файл" Click="SelectOutputFile1Button_Click" Margin="0,0,0,10" Grid.Row="6"/>
+
+                    <Button Content="Обработать данные (Задание 1)" Click="ProcessDataButton_Click" Grid.Row="7"/>
+
+                    <TextBox x:Name="MessageTextBox" IsReadOnly="True" Grid.Row="8" Margin="0,10,0,0"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
